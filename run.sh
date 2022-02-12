@@ -1,2 +1,2 @@
-cd build/Test
-./Test
+cd build/Backtest
+./Backtest

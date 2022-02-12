@@ -21,4 +21,5 @@ file(GLOB IB_POSIX_CLIENT_INCLUDES ${IB_POSIX_CLIENT_INCLUDE_DIR}/*.h)
 file(GLOB API_INCLUDES ${API_INCLUDE_DIR}/*.h)
 
 add_subdirectory(Api)
-add_subdirectory(Test)
+# add_subdirectory(Test)
+add_subdirectory(Backtest)
