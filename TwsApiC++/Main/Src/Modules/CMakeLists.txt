@@ -1,6 +1,6 @@
 add_library (Modules
-  Backtest.h
-  Backtest.cpp)
+  OrderExcute.h
+  OrderExcute.cpp)
 
 install (TARGETS Modules DESTINATION bin)
-install (FILES Backtest.h DESTINATION include)
+install (FILES OrderExcute.h DESTINATION include)
