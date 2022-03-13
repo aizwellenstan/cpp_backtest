@@ -9,7 +9,7 @@ find_package(Threads REQUIRED)
 
 include_directories(${API_INCLUDE_DIR} ${IB_POSIX_CLIENT_INCLUDE_DIR})
 
-add_executable(Backtest ${SOURCE_DIR}/Backtest.cpp)
+add_executable(Backtest ${SOURCE_DIR}/Main.cpp ${SOURCE_DIR}/Backtest.cpp ${SOURCE_DIR}/Backtest.h)
 target_link_libraries(Backtest tws_cpp_api Threads::Threads)
 target_compile_options(Backtest PRIVATE -Wall)
 

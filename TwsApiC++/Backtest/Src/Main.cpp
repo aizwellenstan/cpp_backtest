@@ -21,7 +21,7 @@ using namespace TwsApi;
 
 #include <time.h>
 
-
+#include "Backtest.h"
 
 //----------------------------------------------------------------------------
 // MyEWrapper
@@ -222,6 +222,8 @@ Contract_			C( "MSFT", *SecType::STK, "USD", *Exchange::IB_SMART, *Exchange::ISL
 
 int main( void )
 {
+	backtest("USD");
+
 	printf( "APIVersion    = %s\n", EClientL0::apiVersion() );
 
 //	TestEnums();
