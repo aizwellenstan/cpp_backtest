@@ -9,9 +9,15 @@ find_package(Threads REQUIRED)
 
 include_directories(${API_INCLUDE_DIR} ${IB_POSIX_CLIENT_INCLUDE_DIR})
 
-add_executable(Test ${SOURCE_DIR}/Test.cpp)
-target_link_libraries(Test tws_cpp_api Threads::Threads)
-target_compile_options(Test PRIVATE -Wall)
+add_subdirectory (${SOURCE_DIR}/Modules)
+include_directories(${SOURCE_DIR}/Modules)
+add_executable (Main ${SOURCE_DIR}/Modules ${SOURCE_DIR}/Main.cpp)
+target_link_libraries (Main Modules)
+
+# add_executable(Main ${SOURCE_DIR}/Main.cpp ${SOURCE_DIR}/Main.cpp ${SOURCE_DIR}/Main.h)
+
+target_link_libraries(Main tws_cpp_api Threads::Threads)
+target_compile_options(Main PRIVATE -Wall)
 
 add_executable(History ${SOURCE_DIR}/History.cpp)
 target_link_libraries(History tws_cpp_api Threads::Threads)

@@ -12,21 +12,9 @@ include_directories(${API_INCLUDE_DIR} ${IB_POSIX_CLIENT_INCLUDE_DIR})
 add_subdirectory (${SOURCE_DIR}/Modules)
 include_directories(${SOURCE_DIR}/Modules)
 add_executable (Backtest ${SOURCE_DIR}/Modules ${SOURCE_DIR}/Main.cpp)
-target_link_libraries (Backtest Modules)
+target_link_libraries (Backtest BacktestModules)
 
 # add_executable(Backtest ${SOURCE_DIR}/Main.cpp ${SOURCE_DIR}/Backtest.cpp ${SOURCE_DIR}/Backtest.h)
 
 target_link_libraries(Backtest tws_cpp_api Threads::Threads)
 target_compile_options(Backtest PRIVATE -Wall)
-
-add_executable(History ${SOURCE_DIR}/History.cpp)
-target_link_libraries(History tws_cpp_api Threads::Threads)
-target_compile_options(History PRIVATE -Wall)
-
-add_executable(Bars ${SOURCE_DIR}/Bars.cpp)
-target_link_libraries(Bars tws_cpp_api Threads::Threads)
-target_compile_options(Bars PRIVATE -Wall)
-
-add_executable(Clients ${SOURCE_DIR}/Clients.cpp)
-target_link_libraries(Clients tws_cpp_api Threads::Threads)
-target_compile_options(Clients PRIVATE -Wall)

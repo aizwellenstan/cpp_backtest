@@ -11,3 +11,6 @@ build:
 
 run:
 	@sh run.sh
+	
+backtest:
+	@sh run-backtest.sh
